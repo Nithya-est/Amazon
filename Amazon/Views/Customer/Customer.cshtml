@@ -1,0 +1,42 @@
+﻿
+@model Amazon.Context.tbl_customer
+@{
+    ViewBag.Title = "Customer";
+   
+}
+
+@using (Html.BeginForm("Customer", "Customer", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.Id)
+            <label>First Name</label>
+            @Html.ValidationMessageFor(x => x.Fname, " ", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Fname, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            @Html.ValidationMessageFor(x => x.Lname, " ", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Lname, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Email ID</label>
+            @Html.ValidationMessageFor(x => x.Email, " ", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Mobile</label>
+            @Html.ValidationMessageFor(x => x.Mobile, " ", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            @Html.ValidationMessageFor(x => x.Addresss, " ", new { @class = "error" })
+            @Html.TextAreaFor(x => x.Addresss, new { @class = "form-control", @rows = "10" })
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" name="submitButton" value="Save" />
+        </div>
+
+    </div>
+}
